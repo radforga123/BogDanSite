@@ -17,11 +17,11 @@ public class OrderController
         _dbContext = orderContext;
     }
     [HttpPost]
-    public async Task<IActionResult> Create([FromBody]CreateOrderRequest request)
+    public async Task<IActionResult> Create([FromBody]CreateOrderRequest request, CancellationToken ct)
     {
-        var order = new Order(request.Name, request.Describe, request.Address, request.CreatedDateTime, request.OrderDateTime,
-            request.OrdererId, request.Orderer);
-        
+        var order = new Order(request.Name, request.Describe, request.Address, request.CreatedDateTime);
+        await _dbContext.Orders.AddAsync(order,ct);
+        await _dbContext.SaveChangesAsync(ct);
         return null;
     }
 

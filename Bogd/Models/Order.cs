@@ -2,22 +2,21 @@
 
 public class Order
 {
-    public Order(string name, string describe, string address, DateTime createdDateTime, DateTime orderDateTime,int ordererId,
-        Orderer orderer)
+    public Order(string name, string describe, string address, DateTime orderDateTime)
     {
         name = Name;
         describe = Describe;
         address = Address;
-        createdDateTime = DateTime.Now;
+        CreatedDateTime = DateTime.Now;
         orderDateTime = OrderDateTime;
-        ordererId = OrdererId;
-        orderer = Orderer;
+        //ordererId = OrdererId;
+
     }
     public int Id { get; set; }
     
-    public string Name { get; set; }
+    public string? Name { get; set; }
     
-    public string Describe { get; set; }
+    public string? Describe { get; set; }
 
     public string Address { get; set; }
     
@@ -25,6 +24,6 @@ public class Order
     
     public DateTime OrderDateTime { get; set; }
     
-    public int OrdererId { get; set; }
-    public Orderer? Orderer { get; set; }
+    //public int OrdererId { get; set; }
+    //public Orderer? Orderer { get; set; }
 }
