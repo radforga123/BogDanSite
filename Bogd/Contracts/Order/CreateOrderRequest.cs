@@ -2,4 +2,4 @@
 
 namespace Bogd.Contracts.Order;
 
-public record CreateOrderRequest(string Name, string Describe, string Address, DateTime CreatedDateTime);
+public record CreateOrderRequest(string Name, string Describe, string Address, DateTime OrderDateTime, int OrdererId);

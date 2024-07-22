@@ -3,15 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Bogd.Contexts;
 
-public class OrderContext : DbContext
+public class UserContext : DbContext
 {
-    public DbSet<Order> Orders { get; set; } = null!;
-
-    public DbSet<Orderer> Orderers { get; set; } = null!;
+    public DbSet<User> Users { get; set; } = null!;
 
     private readonly IConfiguration _configuration;
-    
-    public OrderContext(IConfiguration configuration)
+    public UserContext(IConfiguration configuration)
     {
         _configuration = configuration;
     }
